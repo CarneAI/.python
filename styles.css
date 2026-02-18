@@ -1,229 +1,85 @@
-/* 1. Variables Globales y Reset */
 :root {
     --primary-blue: #3776ab;
     --secondary-yellow: #ffd43b;
-    --dark-grey: #2c3e50;
-    --light-grey: #f4f7f6;
-    --white: #ffffff;
-    --code-bg: #1e1e1e;
-    --code-text: #dcdcdc;
-    --accent: #4b8bbe;
+    --html5-orange: #e34f26;
+    --dark: #2c3e50;
+    --light: #f4f7f6;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+body { font-family: 'Segoe UI', sans-serif; background: var(--light); margin: 0; }
+
+/* Header y Nav */
+header { background: var(--primary-blue); color: white; text-align: center; padding: 2rem; }
+nav ul { display: flex; justify-content: center; list-style: none; background: var(--dark); padding: 10px; }
+nav a { color: white; text-decoration: none; padding: 10px 20px; }
+
+/* Contenido */
+main { max-width: 800px; margin: 2rem auto; padding: 1rem; }
+section { background: white; padding: 2rem; margin-bottom: 2rem; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+pre { background: #1e1e1e; color: #dcdcdc; padding: 1rem; border-radius: 5px; }
+
+/* ESTILOS DEL ANUNCIO (MODAL) */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 1001;
+    left: 0; top: 0; width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    backdrop-filter: blur(5px);
 }
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: var(--dark-grey);
-    background-color: var(--light-grey);
-}
-
-/* 2. Navegación y Header */
-header {
-    background: linear-gradient(135deg, var(--primary-blue), var(--accent));
-    color: var(--white);
-    padding: 2rem 1rem;
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 30px;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 15px;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    position: relative;
+    animation: slideUp 0.5s ease;
 }
 
-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-}
-
-nav {
-    background: var(--dark-grey);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-nav ul {
+.image-placeholder {
+    width: 100%;
+    height: 200px;
+    background-color: #eee; /* Fondo gris si no hay imagen */
+    margin: 15px 0;
     display: flex;
+    align-items: center;
     justify-content: center;
-    list-style: none;
-    flex-wrap: wrap;
-}
-
-nav ul li a {
-    display: block;
-    color: var(--white);
-    padding: 1rem 1.5rem;
-    text-decoration: none;
-    transition: background 0.3s;
-    font-weight: bold;
-}
-
-nav ul li a:hover {
-    background: var(--secondary-yellow);
-    color: var(--dark-grey);
-}
-
-/* 3. Contenedor Principal y Secciones */
-main {
-    max-width: 1000px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-}
-
-section {
-    background: var(--white);
-    padding: 2rem;
-    margin-bottom: 2rem;
     border-radius: 8px;
-    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    border: 2px dashed #ccc;
 }
 
-h2 {
-    color: var(--primary-blue);
-    border-left: 5px solid var(--secondary-yellow);
-    padding-left: 1rem;
-    margin-bottom: 1.5rem;
+.close-btn {
+    position: absolute;
+    right: 20px; top: 10px;
+    font-size: 28px; font-weight: bold; cursor: pointer;
 }
 
-h3 {
-    margin: 1.5rem 0 1rem;
-    color: var(--accent);
-}
-
-/* 4. Bloques de Código */
-pre {
-    background-color: var(--code-bg);
-    color: var(--code-text);
-    padding: 1.5rem;
-    border-radius: 5px;
-    overflow-x: auto;
-    font-family: 'Consolas', 'Monaco', monospace;
-    border-left: 4px solid var(--secondary-yellow);
-    margin: 1rem 0;
-}
-
-code {
-    background: #e0e0e0;
-    padding: 0.2rem 0.4rem;
-    border-radius: 4px;
-    font-family: monospace;
-}
-
-/* 5. Tablas */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 1.5rem 0;
-}
-
-th, td {
-    text-align: left;
-    padding: 12px;
-    border-bottom: 1px solid #ddd;
-}
-
-th {
-    background-color: var(--primary-blue);
+.badge-nuevo {
+    background: var(--html5-orange);
     color: white;
-}
-
-tr:hover {
-    background-color: #f9f9f9;
-}
-
-/* 6. Formularios */
-fieldset {
-    border: 1px solid #ddd;
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-    border-radius: 5px;
-}
-
-legend {
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 20px;
     font-weight: bold;
-    padding: 0 0.5rem;
-    color: var(--primary-blue);
+    margin-bottom: 10px;
 }
 
-input[type="text"], 
-input[type="email"], 
-select, 
-textarea {
-    width: 100%;
-    padding: 0.8rem;
-    margin-top: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-button {
-    background: var(--primary-blue);
+.btn-cta {
+    display: inline-block;
+    background: var(--html5-orange);
     color: white;
-    border: none;
-    padding: 0.8rem 2rem;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: transform 0.2s, background 0.3s;
-}
-
-button:hover {
-    background: var(--dark-grey);
-    transform: translateY(-2px);
-}
-
-button[type="reset"] {
-    background: #e74c3c;
-}
-
-/* 7. Elementos Interactivos y Extras */
-details {
-    background: #f8f9fa;
-    padding: 1rem;
-    border-radius: 5px;
-    margin-bottom: 1rem;
-    cursor: pointer;
-}
-
-summary {
-    font-weight: bold;
-    color: var(--primary-blue);
-}
-
-blockquote {
-    border-left: 5px solid #ccc;
-    padding: 1rem 2rem;
-    margin: 1.5rem 0;
-    font-style: italic;
-    background: #fafafa;
-}
-
-/* 8. Footer */
-footer {
-    background: var(--dark-grey);
-    color: var(--white);
-    padding: 3rem 1rem;
-    text-align: center;
-}
-
-footer nav ul {
-    margin: 1rem 0;
-}
-
-footer a {
-    color: var(--secondary-yellow);
+    padding: 12px 25px;
+    border-radius: 30px;
     text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-    }
-    
-    header h1 {
-        font-size: 1.8rem;
-    }
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
 }
