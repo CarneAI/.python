@@ -1,72 +1,330 @@
 <!DOCTYPE html>
-
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Python Masterclass - Aprende desde Cero</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
+<link src="script.js"></script>
 </head>
 <body>
 
-    <div id="progress-bar"></div>
-
     <header>
         <h1>Aprende Python: De Cero a Héroe</h1>
-        <p>La guía definitiva para dominar el lenguaje más versátil.</p>
+        <p>La guía definitiva para dominar el lenguaje más versátil del mundo.</p>
+        
         <nav>
             <ul>
-                <li><a href="#introduccion">Inicio</a></li>
-                <li><a href="#conceptos-basicos">Conceptos</a></li>
+                <li><a href="#introduccion">Introducción</a></li>
+                <li><a href="#instalacion">Instalación</a></li>
+                <li><a href="#conceptos-basicos">Conceptos Básicos</a></li>
+                <li><a href="#estructuras-datos">Estructuras de Datos</a></li>
+                <li><a href="#funciones">Funciones y Módulos</a></li>
                 <li><a href="#ejercicios">Ejercicios</a></li>
                 <li><a href="#comunidad">Comunidad</a></li>
             </ul>
         </nav>
     </header>
 
+    <hr>
+
     <main>
         <section id="introduccion">
             <h2>1. ¿Por qué aprender Python?</h2>
-            <p>Python es el lenguaje líder en Inteligencia Artificial y Ciencia de Datos.</p>
-            <pre>print("¡Hola, mundo!")</pre>
+            <article>
+                <h3>El lenguaje del futuro</h3>
+                <p>Python es un lenguaje de programación de alto nivel, interpretado y con una sintaxis muy limpia.</p>
+                <p>Sus principales usos incluyen:</p>
+                <ul>
+                    <li>Ciencia de Datos y Análisis.</li>
+                    <li>Inteligencia Artificial y Machine Learning.</li>
+                    <li>Desarrollo Web (Backend).</li>
+                    <li>Automatización de tareas (Scripting).</li>
+                </ul>
+            </article>
+        </section>
+
+        <section id="instalacion">
+            <h2>2. Configurando el Entorno</h2>
+            <p>Sigue estos pasos para preparar tu computadora:</p>
+            <ol>
+                <li>Descarga la última versión desde <a href="https://python.org">python.org</a>.</li>
+                <li>Ejecuta el instalador y marca la casilla <strong>"Add Python to PATH"</strong>.</li>
+                <li>Verifica la instalación abriendo una terminal y escribiendo:</li>
+            </ol>
+            <code>python --version</code>
+            
+            <aside>
+                <p><strong>Pro-tip:</strong> Te recomendamos usar Visual Studio Code como editor de texto.</p>
+            </aside>
+        </section>
+
+        <section id="conceptos-basicos">
+            <h2>3. Fundamentos de Programación</h2>
+            
+            <article>
+                <h3>Variables y Tipos de Datos</h3>
+                <p>En Python no necesitas declarar el tipo de variable, se asigna automáticamente.</p>
+                <pre>
+# Ejemplo de código
+nombre = "Amigo"
+edad = 25
+es_estudiante = True
+precio = 19.99
+                </pre>
+            </article>
+
+            <article>
+                <h3>Operadores Matemáticos</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Operación</th>
+                            <th>Símbolo</th>
+                            <th>Ejemplo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Suma</td>
+                            <td>+</td>
+                            <td>5 + 2 = 7</td>
+                        </tr>
+                        <tr>
+                            <td>Resta</td>
+                            <td>-</td>
+                            <td>10 - 4 = 6</td>
+                        </tr>
+                        <tr>
+                            <td>Multiplicación</td>
+                            <td>*</td>
+                            <td>3 * 3 = 9</td>
+                        </tr>
+                        <tr>
+                            <td>División</td>
+                            <td>/</td>
+                            <td>10 / 2 = 5.0</td>
+                        </tr>
+                        <tr>
+                            <td>Potencia</td>
+                            <td>**</td>
+                            <td>2 ** 3 = 8</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+
+            <article>
+                <h3>Condicionales (If-Else)</h3>
+                <p>Controla el flujo de tu programa basado en decisiones.</p>
+                <pre>
+if edad >= 18:
+    print("Eres mayor de edad")
+else:
+    print("Eres menor de edad")
+                </pre>
+            </article>
+        </section>
+
+        <section id="estructuras-datos">
+            <h2>4. Organizando la Información</h2>
+            
+            <div>
+                <h3>Listas</h3>
+                <p>Colecciones ordenadas y mutables.</p>
+                <ul>
+                    <li><code>frutas = ["manzana", "banana", "cereza"]</code></li>
+                    <li>Acceso por índice: <code>frutas[0]</code></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3>Diccionarios</h3>
+                <p>Almacenan datos en pares de Clave-Valor.</p>
+                <pre>
+usuario = {
+    "nombre": "Juan",
+    "email": "juan@example.com"
+}
+                </pre>
+            </div>
+        </section>
+
+        <section id="bucles">
+            <h2>5. Repetición de Tareas (Loops)</h2>
+            <p>Python utiliza principalmente dos tipos de bucles:</p>
+            
+            <h3>Bucle For</h3>
+            <p>Ideal para recorrer colecciones.</p>
+            <pre>
+for i in range(5):
+    print(f"Número: {i}")
+            </pre>
+
+            <h3>Bucle While</h3>
+            <p>Se ejecuta mientras una condición sea verdadera.</p>
+            <pre>
+contador = 0
+while contador < 3:
+    print(contador)
+    contador += 1
+            </pre>
+        </section>
+
+        <section id="funciones">
+            <h2>6. Funciones: Código Reutilizable</h2>
+            <p>No te repitas (DRY - Don't Repeat Yourself).</p>
+            <pre>
+def saludar(nombre):
+    return f"Hola, {nombre}!"
+
+mensaje = saludar("Mundo")
+print(mensaje)
+            </pre>
         </section>
 
         <section id="ejercicios">
-            <h2>2. Ejercicios Prácticos</h2>
-            <div id="quiz-container">
+            <h2>7. ¡Ponlo a prueba!</h2>
+            <p>Completa estos retos para afianzar tus conocimientos:</p>
+            <details>
+                <summary>Reto 1: Calculadora básica</summary>
+                <p>Crea un programa que pida dos números al usuario y muestre su suma.</p>
+            </details>
+            <details>
+                <summary>Reto 2: Contador de vocales</summary>
+                <p>Escribe una función que cuente cuántas vocales hay en una frase.</p>
+            </details>
+            <details>
+                <summary>Reto 3: Adivina el número</summary>
+                <p>Usa la librería <code>random</code> para crear un juego de adivinanzas.</p>
+            </details>
+        </section>
+
+        <section id="recursos">
+            <h2>8. Recursos Visuales</h2>
+            <p>Aprender con diagramas es mucho más sencillo:</p>
+            <figure>
+                <figcaption>Diagrama de flujo de una sentencia condicional</figcaption>
+                <div style="border: 1px solid #000; padding: 20px; text-align: center;">
+                    [Espacio para Imagen: Diagrama de Lógica de Programación]
                 </div>
+            </figure>
         </section>
 
         <section id="comunidad">
-            <h2>Únete a la comunidad</h2>
-            <form id="reg-form">
-                <input type="text" placeholder="Tu nombre" required>
-                <input type="email" placeholder="Tu email" required>
-                <button type="submit">Registrarme</button>
+            <h2>9. Únete a nuestra Comunidad</h2>
+            <p>Regístrate para recibir ejercicios semanales y conectar con otros estudiantes.</p>
+            
+            <form action="#" method="post">
+                <fieldset>
+                    <legend>Datos Personales</legend>
+                    <label for="nombre">Nombre Completo:</label><br>
+                    <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre..."><br><br>
+
+                    <label for="email">Correo Electrónico:</label><br>
+                    <input type="email" id="email" name="email" required placeholder="correo@ejemplo.com"><br><br>
+                    
+                    <label for="nivel">Tu nivel actual:</label><br>
+                    <select id="nivel" name="nivel">
+                        <option value="nada">No sé nada de código</option>
+                        <option value="basico">Sé lo básico de otros lenguajes</option>
+                        <option value="intermedio">Ya conozco Python un poco</option>
+                    </select>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Intereses</legend>
+                    <input type="checkbox" id="web" name="interes" value="web">
+                    <label for="web">Desarrollo Web</label><br>
+                    <input type="checkbox" id="ai" name="interes" value="ai">
+                    <label for="ai">Inteligencia Artificial</label><br>
+                    <input type="checkbox" id="data" name="interes" value="data">
+                    <label for="data">Ciencia de Datos</label>
+                </fieldset>
+
+                <br>
+                <label for="comentarios">Cuéntanos por qué quieres aprender:</label><br>
+                <textarea id="comentarios" name="comentarios" rows="5" cols="40"></textarea><br><br>
+
+                <button type="submit">Enviar Registro</button>
+                <button type="reset">Borrar Formulario</button>
             </form>
+        </section>
+
+        <section id="faq">
+            <h2>Preguntas Frecuentes</h2>
+            <dl>
+                <dt><strong>¿Cuánto tiempo toma aprender Python?</strong></dt>
+                <dd>Depende de tu dedicación, pero en 3 meses puedes tener bases sólidas.</dd>
+                
+                <dt><strong>¿Es Python gratuito?</strong></dt>
+                <dd>Sí, es de código abierto y totalmente gratuito para uso personal y comercial.</dd>
+                
+                <dt><strong>¿Qué sigue después de Python?</strong></dt>
+                <dd>Puedes aprender frameworks como Django (Web) o librerías como Pandas (Datos).</dd>
+            </dl>
+        </section>
+
+        <section id="testimonios">
+            <h2>Lo que dicen nuestros estudiantes</h2>
+            <blockquote>
+                "Gracias a este sitio pude entender los bucles. ¡Por fin me hizo clic!"
+                <footer>— <cite>Carlos R., Estudiante de Ingeniería</cite></footer>
+            </blockquote>
+            <blockquote>
+                "La sección de ejercicios es lo mejor. Muy práctica."
+                <footer>— <cite>Ana M., Analista de Marketing</cite></footer>
+            </blockquote>
         </section>
     </main>
 
-    <div id="modal-anuncio" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <div class="badge-nuevo">¡LANZAMIENTO!</div>
-            <h2>Nuevo Curso: HTML5 desde Cero</h2>
-            
-            <div class="image-placeholder">
-                <img src="tu-imagen-aqui.jpg" alt="Curso HTML5" style="max-width:100%; border-radius: 8px;">
-                </div>
+    <hr>
 
-            <p>Hemos escuchado sus peticiones. ¡Ya puedes aprender a crear sitios web profesionales con nuestro nuevo curso de HTML5!</p>
-            <a href="#" class="btn-cta">Ver detalles del curso</a>
+    <footer>
+        <div>
+            <h3>Python Masterclass</h3>
+            <p>Contenido creado con fines educativos para amigos y el mundo.</p>
+        </div>
+        
+        <nav>
+            <h4>Enlaces Rápidos</h4>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="https://docs.python.org/es/3/" target="_blank">Documentación Oficial</a></li>
+                <li><a href="#">Política de Privacidad</a></li>
+                <li><a href="#">Términos de Uso</a></li>
+            </ul>
+        </nav>
+
+        <div>
+            <h4>Síguenos</h4>
+            <p>Redes sociales (Iconos ficticios):</p>
+            <ul>
+                <li>GitHub</li>
+                <li>Twitter</li>
+                <li>LinkedIn</li>
+            </ul>
+        </div>
+
+        <p><small>&copy; 2026 - Creado por un entusiasta de Python. Todos los derechos reservados.</small></p>
+    </footer>
+
+    <div id="anuncio-modal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-tag">¡LANZAMIENTO!</div>
+            <h2>Nuevo curso de Programación HTML5</h2>
+            
+            <div class="image-container">
+                <img src="IMG_0963.PNG" alt="Imagen del curso HTML5" style="max-width: 100%; border-radius: 8px;">
+            </div>
+
+            <p>Acabamos de lanzar el curso más esperado para complementar tus habilidades en Python. ¡Aprende HTML5 desde cero!</p>
+            <button class="modal-btn">Más información</button>
         </div>
     </div>
 
-    <footer>
-        <p>&copy; 2026 - Python Masterclass para el Mundo</p>
-    </footer>
-
+    <div id="extra-espacio-1" style="height: 20px;"></div>
     <script src="script.js"></script>
 </body>
 </html>
